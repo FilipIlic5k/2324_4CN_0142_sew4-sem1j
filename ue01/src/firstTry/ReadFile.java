@@ -5,6 +5,7 @@ import java.nio.file.Paths;
 import java.io.IOException;
 
 public class ReadFile {
+    static WordCount wc = new WordCount();
 
     /**
      * Read the content of a file and return it as a string.
@@ -21,7 +22,8 @@ public class ReadFile {
         // Test
         try {
             String content = readFileAsString("ue01/src/firstTry/crsto12.html");
-            System.out.println(content);
+            wc.count(content);
+            System.out.println("Number of words: " + WordCount.counter);
         } catch (IOException e) {
             System.out.println("An error occurred while reading the file.");
             e.printStackTrace();
