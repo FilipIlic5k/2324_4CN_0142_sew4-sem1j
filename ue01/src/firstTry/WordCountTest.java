@@ -47,33 +47,33 @@ class WordCountTest {
         assertEquals(2, wc.count(" eins <html>zwei "));
         assertEquals(2, wc.count(" eins<html> zwei "));
         assertEquals(2, wc.count(" eins<html>zwei "));
-        assertEquals(2, wc.count(" eins<img alt=\\\"xxx\\\" > zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"xxx\" > zwei"));
 
-        assertEquals(2, wc.count(" eins \\\"zwei\\\" "));
-        assertEquals(2, wc.count(" eins\\\"zwei\\\" "));
-        assertEquals(2, wc.count(" eins \\\"zwei\\\""));
-        assertEquals(3, wc.count(" eins \\\"zwei\\\"drei"));
+        assertEquals(2, wc.count(" eins \"zwei\" "));
+        assertEquals(2, wc.count(" eins\"zwei\" "));
+        assertEquals(2, wc.count(" eins \"zwei\""));
+        assertEquals(3, wc.count(" eins \"zwei\"drei"));
    }
     @Test
     void hardHTML(){
         assertEquals(2, wc.count(" eins<img alt=\"<bild>\" > zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"bild>\\\" > zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild>\\\" keinwort> zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild>\\\" src=\\\"bild.png\\\" >zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild\\\" keinwort>zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"bild>\" > zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild>\" keinwort> zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild>\" src=\"bild.png\" >zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild\" keinwort>zwei"));
 
-        assertEquals(1, wc.count(" eins<img alt=\\\"<bild\\\" keinwort"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild\\\" keinwort> zwei"));
-        assertEquals(1, wc.count(" eins<img alt=\\\"<bild keinwort> keinwort"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild keinwort keinwort\\\">zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild keinwort< keinwort\\\">zwei"));
+        assertEquals(1, wc.count(" eins<img alt=\"<bild\" keinwort"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild\" keinwort> zwei"));
+        assertEquals(1, wc.count(" eins<img alt=\"<bild keinwort> keinwort"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild keinwort keinwort\">zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild keinwort< keinwort\">zwei"));
     }
 
     @Test
     void insaneHardHTML(){
-        //assertEquals(2, wc.count(" eins<img alt=\\\"<bild \\\\\\\" keinwort> keinwort\\\" keinwort>zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild \\\\\\\" keinwort<keinwort\\\" keinwort>zwei"));
-        assertEquals(2, wc.count(" eins<img alt=\\\"<bild \\\\\\\" keinwort keinwort\\\" keinwort>zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild \\\" keinwort> keinwort\" keinwort>zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild \\\" keinwort<keinwort\" keinwort>zwei"));
+        assertEquals(2, wc.count(" eins<img alt=\"<bild \\\" keinwort keinwort\" keinwort>zwei"));
     }
 
     @Test
