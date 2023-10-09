@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"firstTry","c":"WordCount","l":"count(String)","u":"count(java.lang.String)"},{"p":"firstTry","c":"WordCount","l":"counter"},{"p":"firstTry","c":"WordCount","l":"WordCount()","u":"%3Cinit%3E()"}];updateSearchResults();
