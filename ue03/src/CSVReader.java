@@ -85,6 +85,8 @@ public class CSVReader {
 
         State state = State.CHAR;
 
+        data = data.replaceFirst(" *", "");
+
         for (char c : data.toCharArray()) {
             state = state.handleChar(c, this);
         }
