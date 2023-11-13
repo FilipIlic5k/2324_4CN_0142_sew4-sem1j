@@ -1,12 +1,14 @@
 package firstTry;
 
 
-/**
+/** A simple Buzzer class that detects html tags in plaintext and counts the words.
+ * <br>
  * Provides functionality to count the number of words in a given string,
  * ignoring words inside HTML tags and dealing with escape sequences within strings.
  *
  * @author Filip Ilic
  * @version 4.0
+ * @since 01.10.2023
  */
 public class WordCount {
 

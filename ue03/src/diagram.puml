@@ -1,0 +1,14 @@
+@startuml
+
+[*] ----> CHAR
+
+CHAR: Normaler Buchstabe
+DELIMITER: ","
+
+CHAR --> DELIMITER: if the character is the delimiter\nindexCounter++\nthen add new element to fields array
+
+DELIMITER --> CHAR: if char is not the delimiter\nadd current char to fields array
+DELIMITER --> DELIMITER: if the character is the delimiter \nindexCounter++\nthen add new element to fields array
+
+
+@enduml

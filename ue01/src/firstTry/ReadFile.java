@@ -7,8 +7,7 @@ import java.io.IOException;
 public class ReadFile {
     static WordCount wc = new WordCount();
 
-    /**
-     * Read the content of a file and return it as a string.
+    /** Read the content of a file and return it as a string.
      *
      * @param filePath The path to the file.
      * @return The content of the file as a string.
