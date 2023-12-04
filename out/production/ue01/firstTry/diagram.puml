@@ -1,0 +1,36 @@
+@startuml
+
+[*] ----> NOWORD
+
+NOWORD: Trennzeichen, Leerzeichen und alles was nicht weiter definiert ist
+INWORD: Buchstabe nach "Character.isLetter(c)"
+INHTML: Wartet auf den closing Tag ('>')
+INSTRING: hier werden auch opening und closing Tags ignoriert ("<",">")
+INESCAPE: Wartet auf ('\')
+
+NOWORD ----> NOWORD: Trennzeichen
+NOWORD ----> INWORD: wenn ein Buchstabe detected wird ----> counter++
+NOWORD ----> INHTML: wenn (c == '<')
+
+INWORD ----> INWORD: Buchstabe
+INWORD ----> INHTML: wenn (c == '<')
+INWORD ----> NOWORD: wenn kein Buchstabe mehr detected wird
+
+INHTML ----> INHTML: bei keinem '>' oder '"'
+INHTML ----> NOWORD: schließender Tag
+INHTML ----> INSTRING: wenn ein nicht escaptes Anführungszeichen detectet wird
+
+INSTRING ----> INSTRING
+INSTRING ----> INHTML: bei '"'
+INSTRING ----> INESCAPE: bei '\'
+
+INESCAPE ----> INSTRING
+
+
+
+NOWORD ----> [*]
+INWORD ----> [*]
+INSTRING ----> [*]
+
+
+@enduml

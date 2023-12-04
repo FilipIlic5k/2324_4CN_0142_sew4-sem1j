@@ -1,0 +1,13 @@
+ok,ok,test
+hallo,welt
+hallo,,welt
+"ok,",ok,test
+hallo,"welt"
+hallo,"welt"
+"hallo","welt"
+"nicht" ok
+"nicht ok
+hallo"", "welt"
+"ok","ok""ok",ok
+  hallo,  "welt"
+ hall""o,  "welt"
